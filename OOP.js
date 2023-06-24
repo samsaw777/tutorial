@@ -45,3 +45,34 @@ console.log(car2.decreaseSpeed());
 console.log(car2.decreaseSpeed());
 console.log(car2.decreaseSpeed());
 console.log(car2.decreaseSpeed());
+
+// Bank Account Challenge
+const BankAccount = function () {
+  this.balance = 1000;
+};
+
+//diposite an ammount
+BankAccount.prototype.deposite = function (amount) {
+  this.balance += amount;
+  console.log(`Your account's balance is ${this.balance}`);
+};
+
+//retrive balance
+BankAccount.prototype.getBalance = function () {
+  console.log(`Your account's balance is ${this.balance}`);
+};
+
+//withdraw balance
+BankAccount.prototype.withdraw = function (ammount) {
+  if (this.balance <= 0 || ammount >= this.balance) {
+    console.log("Not sufficient balance");
+  } else {
+    this.balance -= ammount;
+    console.log(`Your account's balance is ${this.balance}`);
+  }
+};
+
+const account1 = new BankAccount();
+account1.getBalance();
+account1.deposite(2000);
+account1.withdraw(300);
