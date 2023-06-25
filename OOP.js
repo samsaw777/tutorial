@@ -76,3 +76,40 @@ const account1 = new BankAccount();
 account1.getBalance();
 account1.deposite(2000);
 account1.withdraw(300);
+
+// Hotel Booking System Code.
+const Hotel = function (roomNumber, roomType, roomStatus) {
+  this.roomNumber = roomNumber;
+  this.roomType = roomType;
+  this.roomStatus = roomStatus;
+};
+
+Hotel.prototype.checkHotelStatus = function () {
+  if (this.roomStatus) {
+    console.log("Room is already booked!");
+  } else {
+    console.log("Room is not booked!");
+  }
+};
+
+Hotel.prototype.checkIn = function () {
+  if (this.roomStatus) {
+    console.log("Oops, this room is booked!");
+  } else {
+    this.roomStatus = true;
+    console.log("Welcome to the Hotel,have a nice vacation!");
+  }
+};
+
+Hotel.prototype.checkOut = function () {
+  this.roomStatus = false;
+  console.log("Thank you for the stay!");
+};
+
+const room1 = new Hotel(1, "single", false);
+room1.checkHotelStatus();
+room1.checkIn();
+room1.checkHotelStatus();
+room1.checkIn();
+room1.checkOut();
+room1.checkHotelStatus();
