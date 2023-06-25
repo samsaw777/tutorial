@@ -113,3 +113,21 @@ room1.checkHotelStatus();
 room1.checkIn();
 room1.checkOut();
 room1.checkHotelStatus();
+
+// setters and getters in an object.
+const Card = {
+  number: 1232,
+  cardName: ["Sameep", "Jon", "Dejong"],
+
+  get cardname() {
+    return this.cardName.slice(0, 4);
+  },
+
+  set cardname(name) {
+    this.cardName.push(name);
+  },
+};
+
+console.log(Card.cardname);
+Card.cardname = "Gavi";
+console.log(Card.cardname);
