@@ -131,3 +131,22 @@ const Card = {
 console.log(Card.cardname);
 Card.cardname = "Gavi";
 console.log(Card.cardname);
+
+// Challenge Temperature Converter
+class Temperature {
+  constructor(calcius) {
+    this.calcius = calcius;
+  }
+
+  get faharenite() {
+    return (this.calcius * 9) / 5 + 32;
+  }
+
+  get kelvin() {
+    return this.calcius + 273.15;
+  }
+}
+
+const temp = new Temperature(30);
+console.log(temp.faharenite);
+console.log(temp.kelvin);
